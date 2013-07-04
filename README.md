@@ -6,7 +6,7 @@ explanation of the TREC 2013 Web Track tasks and process.  This file explains wh
 
 For training purposes, systems can work with previous years' adhoc topics using ClueWeb09. To aid this 
 process we have provided in this github repository:
- 1) Baseline runs over TREC Web Track 2012 topics and collection (using ClueWeb09). 
+ 1) Baseline runs over TREC Web Track 2012 and 2013 topics and collection (using ClueWeb09). 
  2) An updated version of standard TREC evaluation tools that compute risk-sensitive versions of 
  retrieval effectiveness measures, based on a provided baseline run.
 
@@ -17,6 +17,8 @@ choice of easily reproducible baseline system. The risk-sensitive retrieval perf
 will be measured against this baseline. This year, the baseline will be provided using Indri with specific 
 default settings as provided by the Lemur online service. 
  
+Training baselines:
+
 Our ClueWeb09 training baseline uses TREC 2012 Web track topics that uses the same Indri settings 
 as will be used for the ClueWeb12 baseline. This baseline was computed using the Indri search engine, 
 using its default query expansion based on pseudo-relevance feedback, with results filtered using 
@@ -30,6 +32,23 @@ filtering, in the same directory.
 
 We have also included simple query likelihood runs that do not use query expansion in 
 /runs/baselines/2012/ql
+
+Test baseline:
+
+The official 2013 test baseline file has been released and can be found in the trec-web-2013 github repository at:
+
+/data/runs/baselines/2013/rm/results-cata-filtered.txt
+
+You should use this as the key baseline for optimizing your 2013 risk-sensitive submitted runs.  
+
+This test baseline was computed using the same search system, retrieval method, and parameters as the corresponding 2012 training baseline: namely,
+using the Indri search engine with default query expansion based on pseudo-relevance feedback, with results filtered using 
+the Waterloo spam filter.
+
+For further exploration, as with the training baselines, we have also provided various alternative flavors of test baseline, in case
+you want to compare results, combine strategies, etc.  (The file naming mirrors those of the 2012 baselines.) However, only the rm/results-cata-filtered.txt baseline above will be used
+as the final evaluation baseline.
+
 
 2) Evaluation tools
 
